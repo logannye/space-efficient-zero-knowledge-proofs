@@ -1,0 +1,32 @@
+[package]
+name = "myzkp"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1"
+rand = "0.8"
+blake3 = "1"          # switch if baseline uses a different FS hash
+ark-ff = "0.4"
+ark-ec = "0.4"
+ark-serialize = "0.4"
+ark-serialize-derive = "0.4"   # make the derive macros available to this crate
+ark-bn254 = "0.4"
+hex = "0.4"
+
+[features]
+# `kzg` is your default backend; `dev-srs` enables the deterministic test SRS
+# (pairing verification path that constructs [τ]G2). Use `--features dev-srs`
+# during development; do NOT enable it for production runs.
+default = ["kzg"]
+kzg = []
+dev-srs = []
+lookups = []
+
+[[bin]]
+name = "prover"
+path = "src/prover.rs"
+
+[[bin]]
+name = "verifier"
+path = "src/verifier.rs"
