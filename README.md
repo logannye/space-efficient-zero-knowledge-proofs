@@ -68,7 +68,7 @@ Expected output (abridged):
 ✔ tampered proof correctly rejected
 ✔ verification OK for coeff-basis wires, b_blk=64, rows=1536
 ✔ verification OK for eval-basis wires, b_blk=256, rows=2048
-==> All tests passed 🎉
+==> All tests passed 
 ```
 
 ### Run the prover manually
@@ -177,3 +177,4 @@ cargo run --bin verifier -- --rows 1024 --basis eval \
 ## Acknowledgments
 
 This codebase follows the **aggregate-only Fiat–Shamir** and **streaming** discipline described in the whitepaper and demonstrates that **production-style commitments and sublinear space can coexist** in a practical Rust implementation.
+
